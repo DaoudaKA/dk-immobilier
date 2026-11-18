@@ -1,0 +1,32 @@
+{
+  "name": "dk-immobilier",
+  "version": "1.0.0",
+  "private": true,
+  "description": "DK IMMOBILIER — plateforme de vente, achat et location de terrains, champs et biens immobiliers au Sénégal",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@fontsource-variable/outfit": "^5.3.0",
+    "@supabase/ssr": "^0.12.7",
+    "@supabase/supabase-js": "^2.119.0",
+    "leaflet": "^1.9.4",
+    "next": "^16.4.6",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-leaflet": "^5.0.0",
+    "server-only": "^0.0.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.5",
+    "@types/leaflet": "^1.9.22",
+    "@types/node": "^22",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19",
+    "tailwindcss": "^4.3.5",
+    "typescript": "~5.9"
+  }
+}

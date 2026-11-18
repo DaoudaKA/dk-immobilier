@@ -1,0 +1,196 @@
+@import "tailwindcss";
+@import "@fontsource-variable/outfit";
+
+/* =============================================================
+   Charte DK IMMOBILIER — deux couleurs uniquement
+   Bleu DK  #0B3C8C  ·  Blanc  #FFFFFF
+   Les nuances (textes secondaires, bordures, fonds) sont des
+   opacités du bleu sur blanc : la palette reste à deux couleurs.
+   ============================================================= */
+@theme {
+  --color-dk: #0b3c8c;
+  --color-blanc: #ffffff;
+  --font-sans: "Outfit Variable", ui-sans-serif, system-ui, sans-serif;
+  --radius-dk: 1.25rem;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  background: var(--color-blanc);
+  color: var(--color-dk);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: var(--color-dk);
+  color: var(--color-blanc);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-dk);
+  outline-offset: 3px;
+}
+
+/* Motif « plan cadastral » : quadrillage fin en bleu */
+.plan-grid {
+  background-image:
+    linear-gradient(to right, color-mix(in srgb, var(--color-dk) 9%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--color-dk) 9%, transparent) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.plan-grid-blanc {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.09) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.09) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Ligne de bornage pointillée (signature du logo) */
+.bornage {
+  background-image: linear-gradient(to right, currentColor 60%, transparent 60%);
+  background-size: 14px 3px;
+  background-repeat: repeat-x;
+  height: 3px;
+}
+
+/* Champs de formulaire */
+@layer components {
+.champ {
+  @apply w-full rounded-xl border border-dk/20 bg-blanc px-4 py-3 text-dk placeholder:text-dk/40 outline-none transition focus:border-dk focus:ring-4 focus:ring-dk/10;
+}
+
+.etiquette {
+  @apply mb-1.5 block text-sm font-medium text-dk/80;
+}
+
+}
+
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition active:scale-[.98] disabled:opacity-50;
+}
+@utility btn-plein {
+  @apply btn bg-dk text-blanc hover:bg-dk/90;
+}
+@utility btn-contour {
+  @apply btn border border-dk/25 bg-blanc text-dk hover:border-dk;
+}
+@utility btn-blanc {
+  @apply btn bg-blanc text-dk hover:bg-blanc/90;
+}
+
+/* Carte Leaflet en monochrome bleu */
+.carte-dk .leaflet-tile-pane {
+  filter: grayscale(1) contrast(0.95) brightness(1.08);
+}
+.carte-dk .leaflet-tile-pane::after {
+  content: "";
+}
+.carte-dk .leaflet-container {
+  font-family: var(--font-sans);
+  background: var(--color-blanc);
+}
+.carte-dk .teinte {
+  position: absolute;
+  inset: 0;
+  background: var(--color-dk);
+  mix-blend-mode: screen;
+  opacity: 0.18;
+  pointer-events: none;
+  z-index: 250;
+}
+.marqueur-prix {
+  background: var(--color-dk);
+  color: var(--color-blanc);
+  border: 2px solid var(--color-blanc);
+  border-radius: 999px;
+  padding: 3px 10px;
+  font-weight: 600;
+  font-size: 12px;
+  white-space: nowrap;
+  box-shadow: 0 4px 14px rgb(11 60 140 / 0.35);
+  transform: translate(-50%, -50%);
+  display: inline-block;
+}
+.marqueur-prix.actif {
+  background: var(--color-blanc);
+  color: var(--color-dk);
+  border-color: var(--color-dk);
+}
+.leaflet-div-icon.sans-fond {
+  background: transparent;
+  border: none;
+}
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  color: var(--color-dk);
+  border-radius: 16px;
+}
+
+/* ---------- Photos réelles en bichromie (respect de la charte) ---------- */
+.bichromie {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--color-dk);
+}
+.bichromie img {
+  filter: grayscale(1) contrast(1.08) brightness(1.05);
+}
+.bichromie::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--color-dk);
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Défilement horizontal sans barre */
+.defilement {
+  scrollbar-width: none;
+  scroll-snap-type: x mandatory;
+}
+.defilement::-webkit-scrollbar {
+  display: none;
+}
+.defilement > * {
+  scroll-snap-align: start;
+}
+
+/* Apparition douce */
+@keyframes apparition {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+.apparition {
+  animation: apparition 0.45s ease both;
+}
+
+/* Marqueur survolé depuis la liste */
+.marqueur-prix.survol {
+  background: var(--color-blanc);
+  color: var(--color-dk);
+  border-color: var(--color-dk);
+  transform: translate(-50%, -50%) scale(1.18);
+  z-index: 1000;
+  position: relative;
+}
+.marqueur-prix {
+  transition: transform 0.15s ease;
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
+}

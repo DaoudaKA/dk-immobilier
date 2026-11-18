@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="DK IMMOBILIER">
+  <rect width="200" height="200" rx="46" fill="#FFFFFF"/>
+  <g transform="translate(-8 -6)" fill="#0B3C8C" stroke="#0B3C8C"><path fill-rule="evenodd" d="M34 50H64A40 40 0 0 1 104 90V110A40 40 0 0 1 64 150H34Z M52 94L69 75L86 92V132H52Z" stroke="none"/><path d="M63 112H75V132H63Z" stroke="none"/><path d="M116 50H134V150H116Z M134 84L159 50H181L134 112Z M147 96L182 150H160L136 113Z" stroke="none"/><path d="M34 168H182" stroke-width="5" stroke-dasharray="11 7" stroke-linecap="round"/></g>
+</svg>

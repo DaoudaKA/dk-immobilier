@@ -1,0 +1,17 @@
+DÉPOSEZ ICI VOS PHOTOS (format JPG, 1600 px de large minimum)
+
+Le site les détecte automatiquement et les affiche en bichromie bleu/blanc
+pour respecter la charte. Sans photo, un paysage dessiné est affiché.
+
+  accueil.jpg       grande photo de la page d'accueil (paysage, champ, ville)
+  guide.jpg         photo de la page Guide
+  dakar.jpg         carte « Dakar » de l'accueil
+  thies.jpg         carte « Thiès et Petite-Côte »
+  niayes.jpg        carte « Les Niayes »
+  saint-louis.jpg   carte « Saint-Louis et le Fleuve »
+  casamance.jpg     carte « Casamance »
+  centre.jpg        carte « Bassin arachidier »
+
+Sources de photos libres de droits : unsplash.com, pexels.com
+(recherchez « Senegal », « Dakar », « farm Senegal »), ou vos propres photos.
+Les photos des annonces, elles, sont envoyées par les vendeurs et affichées en couleur.
